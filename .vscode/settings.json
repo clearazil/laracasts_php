@@ -1,0 +1,5 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "phpcs.standard": "PSR12",
+    "files.eol": "\n"
+}

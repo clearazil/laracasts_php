@@ -1,3 +1,9 @@
+<?php
+
+/** @var stdClass[] $tasks */
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

@@ -1,5 +1,8 @@
 <?php
 
+use Database\QueryBuilder;
+use Database\Connection;
+
 $config = require 'config.php';
 
 require 'database/Connection.php';
