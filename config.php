@@ -3,9 +3,9 @@
 return [
     'database' => [
         'name' => 'mytodo',
-        'username' => 'root',
-        'password' => '',
-        'connection' => 'mysql:host=127.0.0.1',
+        'username' => 'app',
+        'password' => 'password',
+        'connection' => 'mysql:host=db',
         'options' => [],
     ],
 ];
