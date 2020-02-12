@@ -1,10 +1,16 @@
 USE mytodo;
 
-CREATE TABLE `todos` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`description` TEXT,
-	`completed` TINYINT NOT NULL,
-	PRIMARY KEY (`id`)
+CREATE TABLE todos (
+	id INT NOT NULL AUTO_INCREMENT,
+	description TEXT,
+	completed TINYINT NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE users (
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
 );
 
 INSERT INTO todos (description, completed)
