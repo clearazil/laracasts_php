@@ -1,9 +1,11 @@
 <?php
 
 use Database\QueryBuilder;
+use Core\Router;
+use Core\Request;
 
 /** @var QueryBuilder $database */
-$database = require 'bootstrap.php';
-$tasks = $database->selectAll('todos');
+require 'core/bootstrap.php';
 
-require 'index.view.php';
+require Router::load('routes.php')
+    ->direct(Request::uri());
