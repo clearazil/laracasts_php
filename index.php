@@ -1,5 +1,7 @@
 <?php
 
+include 'vendor/autoload.php';
+
 use Database\QueryBuilder;
 use Core\Router;
 use Core\Request;
