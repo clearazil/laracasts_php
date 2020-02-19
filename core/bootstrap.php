@@ -1,8 +1,8 @@
 <?php
 
-use Core\Database\QueryBuilder;
-use Core\Database\Connection;
-use Core\App;
+use App\Core\Database\QueryBuilder;
+use App\Core\Database\Connection;
+use App\Core\App;
 
 App::bind('config', require 'config.php');
 
@@ -21,7 +21,7 @@ function view($viewName, array $data = [])
 {
     extract($data);
 
-    return require "views/{$viewName}.view.php";
+    return require "app/views/{$viewName}.view.php";
 }
 
 /**

@@ -2,12 +2,11 @@
 
 include 'vendor/autoload.php';
 
-use Database\QueryBuilder;
-use Core\Router;
-use Core\Request;
+use App\Core\Database\QueryBuilder;
+use App\Core\{Router, Request};
 
 /** @var QueryBuilder $database */
 require 'core/bootstrap.php';
 
-Router::load('routes.php')
+Router::load('app/routes.php')
     ->direct(Request::uri(), Request::method());

@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace App\Core;
 
 use Exception;
 
@@ -12,7 +12,7 @@ class Router
     ];
 
     /**
-     * @param [string] $file
+     * @param string $file
      * @return Router
      */
     public static function load($file)
@@ -25,8 +25,8 @@ class Router
     }
 
     /**
-     * @param [string] $uri
-     * @param [string] $controller
+     * @param string $uri
+     * @param string $controller
      * @return void
      */
     public function get($uri, $controller)
@@ -35,8 +35,8 @@ class Router
     }
 
     /**
-     * @param [string] $uri
-     * @param [string] $controller
+     * @param string $uri
+     * @param string $controller
      * @return void
      */
     public function post($uri, $controller)
@@ -45,10 +45,10 @@ class Router
     }
 
     /**
-     * @param [string] $uri
-     * @param [string] $requestType
+     * @param string $uri
+     * @param string $requestType
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     public function direct($uri, $requestType)
     {
@@ -68,6 +68,7 @@ class Router
      */
     private function callAction($controller, $action)
     {
+        $controller = "App\Controllers\\{$controller}";
         $controller = new $controller();
 
         if (!method_exists($controller, $action)) {

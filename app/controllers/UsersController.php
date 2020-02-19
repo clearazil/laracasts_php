@@ -1,9 +1,9 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
-use Core\Database\QueryBuilder;
-use Core\App;
+use App\Core\Database\QueryBuilder;
+use App\Core\App;
 
 class UsersController
 {
