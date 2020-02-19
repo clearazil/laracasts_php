@@ -2,6 +2,8 @@
 
 namespace Core\Database;
 
+use Exception;
+
 class QueryBuilder
 {
     /** @var \PDO */
@@ -18,7 +20,7 @@ class QueryBuilder
     /**
      * Select all rows in a table
      *
-     * @param [string] $table
+     * @param string $table
      * @return array
      */
     public function selectAll($table)
@@ -27,5 +29,29 @@ class QueryBuilder
         $statement->execute();
 
         return $statement->fetchAll(\PDO::FETCH_CLASS);
+    }
+
+    /**
+     * Insert data into a table
+     *
+     * @param string $table
+     * @param array $parameters
+     * @return void
+     */
+    public function insert($table, $parameters)
+    {
+        $sql = sprintf(
+            'insert into %s (%s) values (%s)',
+            $table,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute($parameters);
+        } catch (Exception $e) {
+            die('Whoops, something went wrong.');
+        }
     }
 }

@@ -6,6 +6,8 @@ return [
         'username' => 'app',
         'password' => 'password',
         'connection' => 'mysql:host=db',
-        'options' => [],
+        'options' => [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        ],
     ],
 ];

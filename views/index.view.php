@@ -2,9 +2,15 @@
 
 require('partials/head.php');
 
-/** @var stdClass[] $tasks */
+/** @var stdClass[] $users */
 
 ?>
+
+<ul>
+    <?php foreach ($users as $user) : ?>
+        <li><?= $user->name ?></li>
+    <?php endforeach; ?>
+</ul>
 
 <h1>Submit Your Name</h1>
 
